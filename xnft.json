@@ -1,20 +1,20 @@
 {
-  "name": "xNFT Quickstart",
+  "name": "Moral Panic xNFT",
   "version": "0.0.1",
-  "storage": "",
   "description": "React Native Example",
   "website": "http://wao.gg",
   "kind": "app",
   "icon": {
-    "md": "./assets/icon.png"
+    "md": "./assets/icon2.png"
   },
-  "contact": "",
-  "screenshots": [
-    "./assets/screenShot.png"
-  ],
+  "contact": {
+    "repository": ""
+  },
+  "screenshots": ["./assets/screenShot.png"],
   "entrypoints": {
     "default": {
       "web": "./web-build/index.html"
     }
   }
 }
+

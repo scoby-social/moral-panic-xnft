@@ -1,14 +1,15 @@
-import { registerRootComponent } from "expo";
-import { RecoilRoot } from "recoil";
-import { ActivityIndicator, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { useFonts, Inter_900Black } from "@expo-google-fonts/dev";
+import { registerRootComponent } from 'expo';
+import { RecoilRoot } from 'recoil';
+import { ActivityIndicator, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useFonts, Inter_900Black } from '@expo-google-fonts/dev';
 
-import { ExamplesScreens } from "./screens/ExamplesScreen";
-import { HomeScreen } from "./screens/HomeScreen";
-import { TokenListNavigator } from "./screens/TokenNavigator";
+import { ExamplesScreens } from './screens/ExamplesScreen';
+import { HomeScreen } from './screens/HomeScreen';
+import { TokenListNavigator } from './screens/TokenNavigator';
+import { SpineScreen } from './screens/SpineScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,14 +18,14 @@ function TabNavigator() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: "#e91e63",
+        tabBarActiveTintColor: '#e91e63',
       }}
     >
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: "Home",
+          tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
@@ -35,7 +36,7 @@ function TabNavigator() {
         component={TokenListNavigator}
         options={{
           headerShown: false,
-          tabBarLabel: "Tokens",
+          tabBarLabel: 'Tokens',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bank" color={color} size={size} />
           ),
@@ -45,9 +46,20 @@ function TabNavigator() {
         name="Examples"
         component={ExamplesScreens}
         options={{
-          tabBarLabel: "Examples",
+          tabBarLabel: 'Examples',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Spine Animation"
+        component={SpineScreen}
+        options={{
+          tabBarLabel: 'Spine animations',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="image" color={color} size={size} />
           ),
         }}
       />
@@ -62,7 +74,7 @@ function App() {
 
   if (!fontsLoaded) {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <ActivityIndicator />
       </View>
     );
